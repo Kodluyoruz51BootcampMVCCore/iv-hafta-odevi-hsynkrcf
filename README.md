@@ -64,3 +64,36 @@ MVC'nin tasarımdan biri **Kendini Tekrarlama**. ASP.NET Core MVC, işlevselliğ
 ## Snapshot Nedir?
 <DbContext>Snapshot.cs. Bu dosya, geçerli bir şemanın snapshotunu içerir. Modelinizi veritabanı şemasına çeviren tek bir sınıf gibidir.
       [Snapshot Nedir? Nasıl Değişir? Neden Alınır?](https://softdevpractice.com/blog/entity-framework-core-snapshot/) çok temiz anlatılmış, güzel makale.
+
+## Jquery Calender
+Soruyu anlayamadım yada internette yanlış aratıyorum hiç birşey bulamadım. :shipit:
+
+## First - FirstOrDefault vs Single - SingleOrDefault ?
+
+#### SingleOrDefault ve Single
+- **SingleOrDefault**: Dizi içerisinden sadece bir tane çift sayı seçilmek isteniyor ve seçim şartımız sağlanmıyorsa, bu durumda int tipinin varsayılan değeri olan 0(sıfır) döndürülmesi sağlanacak ise SingleOrDefault seçimininin kullanılması gerekir.
+- **Single**: Eğer seçimimiz sonucunda sadece bir tane eleman geleceği garanti ise bu durumda Single kullanılabilir. Eğer şart sonucunda; hiçbir eleman dönmez ise veya şartı sağlayan birden falza eleman dönerse; bu durumda hata ile karşılaşılacaktır.
+
+#### FirstOrDefault ve First
+- **FirstOrDefault**: Bu seçimde de mantık SingleOrDefault ile aynıdır. Ancak seçimde ilk eleman seçilir. Yani eğer dizide 2den büyük bir sayı seçilecekse; bu elemanda 2 den büyük “ilk” eleman seçilir.
+- **First**: Mantık Single ile aynıdır. Ancak ilk elaman seçilir
+
+##  En Kısa Null Check
+```cs
+   if(myObject){}
+   if(myObject != null){}
+```
+
+## Partial View Nedir?
+Bir işlemi birden fazla kez yapacaksak bir kalıp kullanırız. Öğreğin oluşturacağımız bir resim galerisini web sitesinde birden fazla sayfada kullanacağımızı düşünelim. Aynı galeriyi her sayfa için tekrar tekrar oluşturmak gereksiz ve zaman kaybıdır. Tam da burada Partial View  imdadımıza yetişiyor. Partial View kendi başına hiçbir işlevi olmayan bir yapıdır.
+```cs
+   <!-- Aşağıda bulunan kod örneği layout içinde yazmamız gereken koddur --> 
+   @Html.Action("PartialViewSample", "Home")
+```
+
+## Authentications
+- Login ile ilgili ASP.Net Core'un bize sağladığı sistem ile ilgili --> [Güzel Bir Örnek](http://cagatayyildiz.com/net-core-mvc-login-islemi/)
+- Jwt Authentication sistemi günümüzde çok kullanılıyor. Token Bazlı buyrun bir makale --> [JWT Auth](https://medium.com/bili%C5%9Fim-hareketi/asp-net-core-ile-jwt-authentication-web-api-uyg-66a7d3fecb6f)
+- Evet ASP.Net Core'un token bazlı oAuth middleware sistemi --> [oAuth](https://developer.okta.com/blog/2019/07/12/secure-your-aspnet-core-app-with-oauth)
+
+## Razor Pages vs MVC Projects ?
