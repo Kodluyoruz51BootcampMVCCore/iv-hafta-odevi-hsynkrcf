@@ -96,4 +96,44 @@ Bir işlemi birden fazla kez yapacaksak bir kalıp kullanırız. Öğreğin olu�
 - Jwt Authentication sistemi günümüzde çok kullanılıyor. Token Bazlı buyrun bir makale --> [JWT Auth](https://medium.com/bili%C5%9Fim-hareketi/asp-net-core-ile-jwt-authentication-web-api-uyg-66a7d3fecb6f)
 - Evet ASP.Net Core'un token bazlı oAuth middleware sistemi --> [oAuth](https://developer.okta.com/blog/2019/07/12/secure-your-aspnet-core-app-with-oauth)
 
-## Razor Pages vs MVC Projects ?
+# Razor Pages vs MVC Projects?
+
+## Nedir bu Razor Pages?
+
+ASP.NET Core 2.0 ile beraber hayatımıza giren Razor Pages, ASP.NET Core MVC alt yapısında, sayfa bazlı web uygulamaları geliştirebileceğimiz bir programlama modeli. 
+Tamamen MVC alt yapısı üzerine geliştirilmiş bir kabuk olarak düşünebilirsiniz. MVC template’lerindeki klasör sayısını azaltmak, sayfa bazlı uygulamaları daha kolay geliştirmek için tasarlanmış yeni bir model.
+> Altını çizerek belirtmek isterim ki, MVC’ye alternatif ya da onun yerini alacak bir model değildir.
+
+## ASP.NET MVC ?
+Geliştirilen web uygulamalarındaki bölümlerin artmasıyla beraber yazılan kodlarda artmaktadır.
+Yazılan kodların artması, geliştirilen uygulama için uygun bir mimarinin seçilmemesi kodların karmaşıklaşmasına, kod bakım süresinin uzamasına neden olur.
+Microsoft bu sorunu çözmek için web uygulamalarında sıklıkla kullanılan MVC mimarisini ASP.NET içerisine entegre etmiştir.<p>MVC yani <strong>M</strong>odel-<strong>V</strong>iew-<strong>C</strong>ontroller en basit şekilde geliştirilen uygulamaların parçalara ayrılmasıdır.</p>
+<p>Parçalara ayrılmasındaki neden SOC <strong>S</strong>eparation <strong>O</strong>f <strong>C</strong>oncerns yani sorumlulukların ayrılması prensibidir.</p>Her bir parçanın kendine göre görevleri vardır.
+<ul><li><strong>Model</strong> – Uygulamada kullanılacak verilerin bulunduğu, veritabanı ile ilgili bağlantının yapıldığı katmandır.</li><li><strong>View</strong> – Model içerisindeki verilerin görselleştirilmesinden sorumlu katmandır.</li><li><strong>Controller</strong> – Model ile View arasındaki bağlantıyı sağlayan katmandır. View’dan gelen ekleme, silme, güncelleme vb. isteklere cevap verir.</li></ul>
+
+## Karşılaştıralım
+
+ASP.Net Core Razor Page, ASP.NET MVC'nin görünüm sayfalarına çok benzer. Sözdizimi ve işlevsellikte MVC ile benzerlik gösterir. En büyük fark, bir MVC uygulama modelinde ve denetleyici kodunun Görünüm sayfalarına eklenmesi veya bağlanmasıdır.
+
+Razor sayfaları, sayfa uzantısı dışında yapı bağlamında ASP.Net web formlarına benzer.
+ASP.Net web formlarında, UI için .aspx ve arkasında kod için .aspx.cs dosyası vardı, ASP.Net Razor sayfalarında UI için .cshtml ve arkasında kod için .cshtml.cs var.
+
+> Yani, Razor sayfalarının MVC'ye göre daha organize olduğunu söyleyebiliriz. MVC'de çok sayıda yönlendirme, Controller içindeki Model, Denetleyici ve Eylemlere dahil olur. Ancak Razor sayfalarında durum böyle değil.
+
+Razor sayfalarının MVC gibi bir yapısı yoktur. Tüm Razor sayfaları çok temel bir yapıya sahip Pages klasörü altında bulunur. Aşağıdaki ekran görüntüsünü görebilirsiniz. Ayrıca, proje yapınızı işlevselliğinize göre düzenleyebilirsiniz.
+Aşağıdaki ekran görüntüsü, .Net Core Razor sayfalarının proje yapısı ile MVC arasındaki farkları açıklayacaktır.
+Razor sayfalarını MVC yapısına karşı aşağıdaki görüntüden anlayın.
+
+![mvcrazor](https://1.bp.blogspot.com/-8G1LL9mwx4Q/XaC1-cAhY-I/AAAAAAAACYo/Ac9TmL4T-7EcLZfcwx9BW3rKVnIH2SniwCNcBGAsYHQ/s400/del.png)
+
+# ÖZET
+
+Razor sayfaları geleneksel ASP.Net WebForms'un bir sonraki evrimidir. MVC, çok sayıda dinamik sunucu sayfası, REST API'leri ve AJAX çağrısı olan web uygulamaları için iyidir.
+> Hangisinin daha iyi olduğuna karar vermek için birçok tartışma olabilir.
+
+**RAZOR**: Temel web sayfaları ve basit kullanıcı giriş formları için statik sayfalarla veya birkaç dinamik sayfa içeren bir web sitesi oluşturmak istiyorsanız, Razor'ın iyi bir seçim olduğunu düşünüyorum.<br />
+**MVC**: Ancak REST tabanlı bir API projesi veya çok sayıda dinamik sayfa oluşturuyorsanız, MVC ile yola devam etmelisiniz. :smile:
+
+**ASP.Net Core'da Razor sayfaları ve MVC öğrenmenin tadını çıkarın.**
+
+<p align="center"><strong>Hüseyin Karacif tarafından :heart: ile hazırlandı.</strong></p>
